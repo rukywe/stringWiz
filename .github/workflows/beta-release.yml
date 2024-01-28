@@ -17,8 +17,12 @@ jobs:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm version ${{ github.event.inputs.prerelease-version }}
-      - run: git push --follow-tags
+      - name: Update version
+        run: |
+          if [ "$(npm -v)" != "${{ github.event.inputs.prerelease-version }}" ]; then
+            npm version ${{ github.event.inputs.prerelease-version }}
+            git push --follow-tags
+          fi
       - run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
