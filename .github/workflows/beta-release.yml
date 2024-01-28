@@ -1,24 +1,24 @@
-name: Publish Package
+name: Beta Release
 
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: Tag to publish
+      prerelease-version:
+        description: 'Pre-release version (e.g., 1.0.0-beta.1)'
         required: true
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.inputs.tag }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm publish
+      - run: npm version ${{ github.event.inputs.prerelease-version }}
+      - run: git push --follow-tags
+      - run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
