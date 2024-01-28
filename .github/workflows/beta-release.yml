@@ -20,7 +20,7 @@ jobs:
       - name: Tag Release
         run: |
           git tag ${{ github.event.inputs.prerelease-version }}
-          git push --tags
+          git push origin ${{ github.event.inputs.prerelease-version }}
       - run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
