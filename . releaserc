@@ -1,0 +1,13 @@
+{
+  "branches": ["main"],
+  "repositoryUrl": "https://github.com/your-username/your-repo",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/npm",
+    {
+      "path": "@semantic-release/github",
+      "assets": ["dist/**/*.{js,css}", "build/**/*.{js,css}"]
+    }
+  ]
+}
