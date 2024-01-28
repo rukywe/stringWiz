@@ -19,8 +19,12 @@ jobs:
       - run: npm ci
       - name: Tag Release
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git tag ${{ github.event.inputs.prerelease-version }}
           git push origin ${{ github.event.inputs.prerelease-version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
