@@ -25,6 +25,6 @@ jobs:
       - run: npm test
       - if: success()
         run: |
-          npm version <span class="math-inline">\{\{ github\.ref \}\}\
+          npm version ${{ github.ref }}
           git tag ${{ github.ref }}
           git push origin ${{ github.ref }}  # Push tag to remote
