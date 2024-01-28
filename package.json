@@ -1,6 +1,6 @@
 {
   "name": "stringwiz",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "StringWiz: A Simple and Efficient JavaScript String Manipulation Library. Provides a range of easy-to-use functions for common string operations.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
