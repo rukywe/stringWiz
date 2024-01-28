@@ -7,6 +7,11 @@ import {
   toPascalCase,
   toSnakeCase
 } from './functions/caseConverters';
+import { truncateMiddle } from './functions/truncateMiddle';
+import { isPalindrome } from './functions/isPalindrome';
+import { toHeaderCase } from './functions/toHeaderCase';
+import { replaceAllOccurrences } from './functions/replaceAllOccurrences';
+import { countWords } from './functions/countWords';
 
 export {
   reverseString,
@@ -15,5 +20,10 @@ export {
   toConstantCase,
   toDotCase,
   toPascalCase,
-  toSnakeCase
+  toSnakeCase,
+  isPalindrome,
+  truncateMiddle,
+  toHeaderCase,
+  replaceAllOccurrences,
+  countWords
 };
