@@ -33,7 +33,7 @@ publish:
     - name: Use Node.js 20.x
       uses: actions/setup-node@v2
       with:
-        node-version: '20.x' # Update this line to use Node.js 20.x
+        node-version: '20.x'
     - run: npm ci
     - run: npm run semantic-release
       env:
