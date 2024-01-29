@@ -28,7 +28,7 @@
     "node": ">=16.0.0"
   },
   "author": "Kelvin Anigboro",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/rukywe/stringWiz"
