@@ -22,3 +22,17 @@ export function toPascalCase(str: string): string {
     )
     .replace(/\s+/g, '');
 }
+
+// snake_case -> camelCase
+export function snakeToCamelCase(str: string): string {
+  if (!str.includes('_')) {
+    // Return the string as-is if it doesn't contain any underscores
+    return str;
+  }
+  return str.toLowerCase().replace(/(_\w)/g, (m) => m[1].toUpperCase());
+}
+
+// camelCase -> snake_case
+export function camelToSnakeCase(str: string): string {
+  return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}

@@ -2,6 +2,8 @@ import { reverseString } from './functions/reverseString';
 import { capitalizeWords } from './functions/capitalizeWords';
 import { generateAcronym } from './functions/generateAcronym';
 import {
+  camelToSnakeCase,
+  snakeToCamelCase,
   toConstantCase,
   toDotCase,
   toPascalCase,
@@ -12,6 +14,10 @@ import { isPalindrome } from './functions/isPalindrome';
 import { toHeaderCase } from './functions/toHeaderCase';
 import { replaceAllOccurrences } from './functions/replaceAllOccurrences';
 import { countWords } from './functions/countWords';
+import { maskSensitiveData } from './functions/maskSensitiveData';
+import { stripHtmlTags } from './functions/stripHtmlTags';
+import { obfuscateEmail } from './functions/obfuscateEmail';
+import { formatCurrency } from './functions/formatCurrency';
 
 export {
   reverseString,
@@ -25,5 +31,11 @@ export {
   truncateMiddle,
   toHeaderCase,
   replaceAllOccurrences,
-  countWords
+  countWords,
+  maskSensitiveData,
+  snakeToCamelCase,
+  camelToSnakeCase,
+  stripHtmlTags,
+  obfuscateEmail,
+  formatCurrency
 };
