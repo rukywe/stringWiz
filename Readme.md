@@ -71,6 +71,24 @@ Removes HTML tags from a string.
 stripHtmlTags('<p>Hello World</p>'); // 'Hello World'
 ```
 
+### `encodeBase64(str: string): string`
+
+Encodes a string to Base64.
+
+```javascript
+encodeBase64('Hello World');
+// 'SGVsbG8gV29ybGQ='
+```
+
+### `decodeBase64(str: string): string`
+
+Decodes a Base64 string.
+
+```javascript
+decodeBase64('SGVsbG8gV29ybGQ=');
+// 'Hello World'
+```
+
 ### `formatCurrency(amount: number, currencySymbol: string = '$', decimalPlaces: number = 2): string`
 
 This function formats a numeric amount as a currency string, allowing customization for the currency symbol and the number of decimal places.
@@ -177,6 +195,44 @@ Converts a string from camelCase to snake_case. It handles strings that are alre
 ```javascript
 camelToSnakeCase('helloWorld'); // 'hello_world'
 camelToSnakeCase('hello_world'); // 'hello_world'
+```
+
+### `extractEmails(str: string): string[]`
+
+Extracts email addresses from a string.
+
+```javascript
+extractEmails('Contact us at test@example.com and admin@example.com');
+// ['test@example.com', 'admin@example.com']
+```
+
+### `removeExtraSpaces(str: string): string`
+
+Removes extra spaces from a string.
+
+```javascript
+removeExtraSpaces('  Hello   World  ');
+// 'Hello World'
+```
+
+### `isNumeric(str: string): boolean`
+
+Checks if a string is numeric.
+
+```javascript
+isNumeric('1234');
+// true
+isNumeric('1234a');
+// false
+```
+
+### `sanitizeForURL(str: string): string`
+
+Sanitizes a string by encoding non-URL-friendly characters, making it safe for use in URLs.
+
+```javascript
+sanitizeForURL('Hello World!'); // 'hello-world%21'
+sanitizeForURL('  JavaScript & Web Dev @2021  '); // 'javascript-%26-web-dev-%402021'
 ```
 
 ## Contributing
